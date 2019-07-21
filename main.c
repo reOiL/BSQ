@@ -6,11 +6,19 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 12:32:32 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/21 13:07:30 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "io_support.h"
+
 int		main(int argc, char **argv)
 {
+	if (argc == 1)
+	{
+		io_read(0);
+		// TODO: add function for solve
+	}
+	(void)argv;
 	return (0);
 }
