@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   func_prot.h                                        :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/21 13:49:37 by jraelene         ###   ########.fr       */
+/*   Created: 2019/07/21 13:46:20 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/21 13:48:50 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNC_PROT_H
-# define FUNC_PROT_H
+#include "func_prot.h"
 
-void	ft_putchar(char c);
+char	*ft_strcpy(char *dest, char *src)
+{
+	int i;
 
-void	ft_putstr(char *str);
-
-int		ft_atoi(char *str);
-
-int		ft_strlen(char *str);
-
-char	*ft_strcpy(char *dest, char *src);
-
-#endif
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
