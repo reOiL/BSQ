@@ -6,12 +6,22 @@
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/21 16:11:27 by jraelene         ###   ########.fr       */
+/*   Updated: 2019/07/21 16:23:05 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNC_PROT_H
 # define FUNC_PROT_H
+
+typedef struct s_list	t_list;
+
+struct	s_list
+{
+	int		field_size;
+	char	empty;
+	char	obst;
+	char	fil;
+};
 
 void	ft_putchar(char c);
 
