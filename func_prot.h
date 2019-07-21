@@ -6,7 +6,7 @@
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/21 12:30:24 by jraelene         ###   ########.fr       */
+/*   Updated: 2019/07/21 13:29:28 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 void	ft_putchar(char c);
 
 void	ft_putstr(char *str);
+
+int		ft_atoi(char *str);
 
 #endif
