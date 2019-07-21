@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   func_prot.h                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/21 16:11:27 by jraelene         ###   ########.fr       */
+/*   Created: 2019/07/21 13:51:12 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/21 16:11:31 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNC_PROT_H
-# define FUNC_PROT_H
+#include "func_prot.h"
+#include "stdlib.h"
 
-void	ft_putchar(char c);
+char	*ft_realloc(char *array, int new_len)
+{
+	char *res;
 
-void	ft_putstr(char *str);
-
-int		ft_atoi(char *str);
-
-int		ft_strlen(char *str);
-
-char	*ft_strcpy(char *dest, char *src);
-
-char	*ft_realloc(char *array, int new_len);
-
-#endif
+	res = malloc(((ft_strlen(array) + 1) + new_len) * sizeof(char));
+	res = ft_strcpy(res, array);
+	free(array);
+	return (res);
+}
