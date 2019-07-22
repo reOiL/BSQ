@@ -35,10 +35,14 @@ int		main(int argc, char **argv)
 		while (i < argc)
 		{
 			fd = open(argv[i++], O_RDONLY);
-			buff = io_read(fd);
-			// TODO: split whitespace
-			free(buff);
-			// TODO: add function fo solve
+			if (fd != -1)
+			{
+                buff = io_read(fd);
+                ft_putstr(buff);
+                // TODO: split whitespace
+                free(buff);
+                // TODO: add function fo solve
+            }
 		}
 	}
 	return (0);

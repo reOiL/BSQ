@@ -30,7 +30,7 @@ char	*io_read(int fd)
 			break ;
 		buffer[res] = '\0';
 		result = ft_realloc(result, res);
-		ft_strcpy(result, buffer);
+		ft_strcpy(&result[taked], buffer);
 		taked += res;
 	}
 	if (fd > 0)

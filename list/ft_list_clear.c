@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io_support.h                                       :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:41:48 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 13:07:34 by jwebber          ###   ########.fr       */
+/*   Created: 2019/07/22 17:32:32 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/22 17:38:23 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IO_SUPPORT_H
-# define IO_SUPPORT_H
+#include "ft_list.h"
 
-# define BUFF_SIZE 10
-
-char	*io_read(int fd);
-
-#endif
+void	ft_list_clear(t_list **begin_list)
+{
+	if (*begin_list == NULL)
+		return ;
+	ft_list_clear(&(*begin_list)->next);
+	free(*begin_list);
+}

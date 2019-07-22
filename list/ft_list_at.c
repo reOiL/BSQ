@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io_support.h                                       :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:41:48 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 13:07:34 by jwebber          ###   ########.fr       */
+/*   Created: 2019/07/22 17:38:38 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/22 17:54:17 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IO_SUPPORT_H
-# define IO_SUPPORT_H
+#include "ft_list.h"
 
-# define BUFF_SIZE 10
-
-char	*io_read(int fd);
-
-#endif
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+{
+	if (begin_list == NULL)
+		return (0);
+	if (nbr <= 0)
+		return (begin_list);
+	return (ft_list_at(begin_list->next, nbr - 1));
+}

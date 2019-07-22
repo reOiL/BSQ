@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io_support.h                                       :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:41:48 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 13:07:34 by jwebber          ###   ########.fr       */
+/*   Created: 2019/07/22 16:44:55 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/22 17:15:35 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IO_SUPPORT_H
-# define IO_SUPPORT_H
+#include "ft_list.h"
 
-# define BUFF_SIZE 10
-
-char	*io_read(int fd);
-
-#endif
+void	ft_list_push_back(t_list **begin_list, void *data)
+{
+	while (*begin_list != NULL)
+	{
+		begin_list = &(*begin_list)->next;
+	}
+	*begin_list = ft_create_elem(data);
+}

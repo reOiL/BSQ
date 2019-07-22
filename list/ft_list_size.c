@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io_support.h                                       :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/21 12:41:48 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 13:07:34 by jwebber          ###   ########.fr       */
+/*   Created: 2019/07/22 17:24:02 by jraelene          #+#    #+#             */
+/*   Updated: 2019/07/22 17:31:21 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IO_SUPPORT_H
-# define IO_SUPPORT_H
+#include "ft_list.h"
 
-# define BUFF_SIZE 10
+int		ft_list_size(t_list *begin_list)
+{
+	int i;
 
-char	*io_read(int fd);
-
-#endif
+	i = 0;
+	while (begin_list != NULL)
+	{
+		begin_list = begin_list->next;
+		i++;
+	}
+	return (i);
+}
