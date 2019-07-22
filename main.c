@@ -12,16 +12,23 @@
 
 #include "io_support.h"
 #include "ft/func_prot.h"
+#include "list/ft_list.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+void    solve(t_list *lst)
+{
+
+}
 
 int		main(int argc, char **argv)
 {
 	int		fd;
 	int		i;
 	char	*buff;
-	
+	t_list  *lst;
+
 	i = 1;
 	if (argc == 1)
 	{
@@ -39,9 +46,10 @@ int		main(int argc, char **argv)
 			{
                 buff = io_read(fd);
                 ft_putstr(buff);
-                // TODO: split whitespace
+                lst = ft_split(buff);
+                solve(lst);
                 free(buff);
-                // TODO: add function fo solve
+                ft_list_clear(&lst);
             }
 		}
 	}

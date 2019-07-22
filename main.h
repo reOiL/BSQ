@@ -16,6 +16,6 @@
 # include "ft/ft_pair.h"
 # include "ft/func_prot.h"
 
-void	array_fill(char **a, t_list conf, t_quadro point);
+void	array_fill(char **a, t_node conf, t_quadro point);
 
 #endif

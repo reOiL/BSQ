@@ -12,7 +12,7 @@
 
 #include "main.h"
 
-void	array_fill(char **a, t_list conf, t_quadro point)
+void	array_fill(char **a, t_node conf, t_quadro point)
 {
 	int	i;
 	int	j;
