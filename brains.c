@@ -6,15 +6,27 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 12:30:16 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 18:57:37 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+#include <stdio.h>
+
+void	print_ele(t_list *lst)
+{
+	while (lst)
+	{
+		ft_putstr(lst->data);
+		ft_putchar('\n');
+		lst = lst->next;
+	}
+}
 
 int		solve(char *str)
 {
-	t_list	*lst;
+	t_list		*lst;
+	t_quadro	points;
 
 	lst = ft_split(str);
 	if (!parse_info(&g_info, lst->data) || !verificate(lst->next, g_info))
@@ -22,6 +34,9 @@ int		solve(char *str)
 		ft_list_clear(&lst, 1);
 		return (0);
 	}
+	points = parse(lst->next, 1);
+	array_fill(lst->next, points);
+	print_ele(lst);
 	ft_list_clear(&lst, 1);
 	return (1);
 }
@@ -79,20 +94,21 @@ int		verificate(t_list *lst, t_node node)
 	return (1);
 }
 
-void	array_fill(char **a, t_node conf, t_quadro point)
+void	array_fill(t_list *a, t_quadro point)
 {
 	int	i;
 	int	j;
 
 	i = point.x.x;
-	j = point.x.y;
 	while (i < point.y.x + 1)
 	{
+		j = point.x.y;
 		while (j < point.y.y + 1)
 		{
-			a[i][j] = conf.fil;
+			((char *)a->data)[j] = g_info.fil;
 			j++;
 		}
+		a = a->next;
 		i++;
 	}
 }

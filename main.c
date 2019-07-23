@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 11:32:02 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 18:18:39 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 
 int		main(int argc, char **argv)
 {
@@ -24,6 +26,8 @@ int		main(int argc, char **argv)
 	int		i;
 	char	*buff;
 
+	clock_t start, end;
+	start = clock();
 	i = 1;
 	if (argc == 1)
 	{
@@ -44,5 +48,8 @@ int		main(int argc, char **argv)
 			i++;
 		}
 	}
+	end = clock();
+	printf("\nexecution time: %f\n", (double)(end - start)/CLOCKS_PER_SEC);
+	system("read -n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/21 12:27:26 by jwebber           #+#    #+#              #
-#    Updated: 2019/07/23 08:13:56 by jwebber          ###   ########.fr        #
+#    Updated: 2019/07/23 16:00:57 by jwebber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,10 @@ SRC = main.c \
 	  list/ft_list_push_back.c \
 	  list/ft_list_push_front.c \
 	  list/ft_list_size.c \
-	  list/ft_split.c
+	  list/ft_split.c \
+	  brains_2.c
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -MD
 RM = /bin/rm -f
 
 all:

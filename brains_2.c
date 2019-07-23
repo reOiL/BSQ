@@ -6,11 +6,12 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:35:43 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 16:29:25 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 18:56:57 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+#include <stdio.h>
 
 int			is_fill(t_list *dat)
 {
@@ -34,8 +35,9 @@ char		ft_zip(t_list *dat, int i, int j)
 	t_list	*x;
 	t_list	*y;
 
-	x = ft_list_at(dat, i);
-	y = ft_list_at(dat, (i + 1));
+	(void)i;
+	x = dat;
+	y = x->next;
 	if (y == 0 || j == ft_strlen((char*)x->data))
 		return (((char *)x->data)[j]);
 	if (((char *)x->data)[j] == g_info.empty &&
@@ -57,9 +59,7 @@ t_pair		ft_find_index(t_list *dat)
 		while (((char *)dat->data)[ret.y])
 		{
 			if (((char *)dat->data)[ret.y] == g_info.empty)
-			{
 				return (ret);
-			}
 			ret.y++;
 		}
 		ret.x++;
@@ -70,7 +70,7 @@ t_pair		ft_find_index(t_list *dat)
 	return (ret);
 }
 
-char		*ft_transform(t_list *dat, int i)
+char		*ft_transform(t_list *dat, int i, int *no_way)
 {
 	char	*res;
 	int		j;
@@ -80,35 +80,42 @@ char		*ft_transform(t_list *dat, int i)
 	while (((char *)(dat->data))[j] != '\0')
 	{
 		res[j] = ft_zip(dat, i, j);
+		if (res[j] == g_info.empty)
+			*no_way = 0;
 		j++;
 	}
 	return (res);
 }
 
-t_quadro	parse(t_list *dat)
+t_quadro	parse(t_list *dat, int first)
 {
 	t_quadro	res;
 	int			no_way;
 	t_list		*next;
 	int			i;
+	t_list		*start;
 
+	start = dat;
 	no_way = 1;
 	i = 0;
 	next = NULL;
-	while (dat)
+	while (dat->next)
 	{
-		ft_list_push_back(&next, ft_transform(dat, i));
+		ft_list_push_back(&next, ft_transform(dat, i, &no_way));
 		dat = dat->next;
 		i++;
 	}
 	if (!no_way)
 	{
-		res = parse(next);
+		if (!first)
+			ft_list_clear(&dat, 1);
+		res = parse(next, 0);
 		res.y.x += 1;
 		res.y.y += 1;
 		return (res);
 	}
-	res.x = ft_find_index(dat);
+	ft_list_clear(&next, 1);
+	res.x = ft_find_index(start);
 	res.y = res.x;
 	return (res);
 }
