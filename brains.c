@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 20:54:39 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:11:49 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		solve(char *str)
 	}
 	points = parse(lst->next, 1);
 	array_fill(lst->next, points);
-	print_ele(lst);
+	print_ele(lst->next);
 	ft_list_clear(&lst, 1);
 	return (1);
 }
