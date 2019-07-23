@@ -6,14 +6,14 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:48 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/21 13:07:34 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 09:13:23 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IO_SUPPORT_H
 # define IO_SUPPORT_H
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 512
 
 char	*io_read(int fd);
 

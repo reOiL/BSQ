@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:44 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/22 08:25:31 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 09:01:05 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "ft/func_prot.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*io_read(int fd)
 {
 	char	*result;
-	char	buffer[BUFF_SIZE];
+	char	buffer[BUFF_SIZE + 1];
 	int		res;
 	int		taked;
 
