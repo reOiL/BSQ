@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 18:18:39 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 20:33:07 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,39 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
+
+void	read_file(int argc, char **argv)
+{
+	char	*buff;
+	int		i;
+	int		fd;
+
+	i = 1;
+	while (i < argc)
+	{
+		fd = open(argv[i], O_RDONLY);
+		if (fd != -1)
+		{
+			if (fd == -1 || !(buff = io_read(fd)) || !solve(buff))
+				ft_putstr("map error\n");
+			free(buff);
+		}
+		i++;
+	}
+}
 
 int		main(int argc, char **argv)
 {
-	int		fd;
-	int		i;
 	char	*buff;
 
-	clock_t start, end;
-	start = clock();
-	i = 1;
 	if (argc == 1)
 	{
 		buff = io_read(0);
+		if (!(buff = io_read(0)) || !solve(buff))
+			ft_putstr("map error\n");
 		free(buff);
 	}
 	else
-	{
-		while (i < argc)
-		{
-			fd = open(argv[i], O_RDONLY);
-			if (fd != -1)
-			{
-				buff = io_read(fd);
-				solve(buff);
-				free(buff);
-			}
-			i++;
-		}
-	}
-	end = clock();
-	printf("\nexecution time: %f\n", (double)(end - start)/CLOCKS_PER_SEC);
-	system("read -n");
+		read_file(argc, argv);
 	return (0);
 }
