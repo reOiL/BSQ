@@ -6,20 +6,31 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/22 08:25:29 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 09:21:23 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "io_support.h"
 #include "ft/func_prot.h"
 #include "list/ft_list.h"
+#include "main.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 
-void    solve(t_list *lst)
+int		solve(char *str)
 {
+	t_node	node;
+	t_list	*lst;
 
+	lst = ft_split(str);
+	if (!parse_info(&node, lst->data))
+	{
+		ft_list_clear(&lst, 1);
+		return (0);
+	}
+	ft_list_clear(&lst, 1);
+	return (1);
 }
 
 int		main(int argc, char **argv)
@@ -27,30 +38,25 @@ int		main(int argc, char **argv)
 	int		fd;
 	int		i;
 	char	*buff;
-	t_list  *lst;
 
 	i = 1;
 	if (argc == 1)
 	{
 		buff = io_read(0);
-		// TODO: split whitespace
 		free(buff);
-		// TODO: add function fo solve
 	}
 	else
 	{
 		while (i < argc)
 		{
-			fd = open(argv[i++], O_RDONLY);
+			fd = open(argv[i], O_RDONLY);
 			if (fd != -1)
 			{
-                buff = io_read(fd);
-                ft_putstr(buff);
-                lst = ft_split(buff);
-                solve(lst);
-                free(buff);
-                ft_list_clear(&lst);
-            }
+				buff = io_read(fd);
+				solve(buff);
+				free(buff);
+			}
+			i++;
 		}
 	}
 	return (0);
