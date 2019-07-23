@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:23:36 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 18:57:19 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 20:51:40 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int			verificate(t_list *lst, t_node node);
 int			solve(char *str);
 t_quadro	parse(t_list *dat, int first);
 t_node		g_info;
-
+void		print_ele(t_list *lst);
 #endif

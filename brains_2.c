@@ -6,12 +6,11 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:35:43 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 18:56:57 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:07:43 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
-#include <stdio.h>
 
 int			is_fill(t_list *dat)
 {

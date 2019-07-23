@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 18:57:37 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 20:54:39 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,19 +96,20 @@ int		verificate(t_list *lst, t_node node)
 
 void	array_fill(t_list *a, t_quadro point)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	t_list	*temp;
 
 	i = point.x.x;
 	while (i < point.y.x + 1)
 	{
 		j = point.x.y;
+		temp = ft_list_at(a, i);
 		while (j < point.y.y + 1)
 		{
-			((char *)a->data)[j] = g_info.fil;
+			((char *)temp->data)[j] = g_info.fil;
 			j++;
 		}
-		a = a->next;
 		i++;
 	}
 }
