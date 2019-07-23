@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:44 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 20:47:05 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:20:28 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*io_read(int fd)
 	new_line_count = 0;
 	taked = 0;
 	result = (char *)malloc(sizeof(char) * 1);
+	if (result == NULL)
+		ft_memerror();
 	while ((res = read(fd, buffer, BUFF_SIZE)))
 	{
 		if (res == -1)

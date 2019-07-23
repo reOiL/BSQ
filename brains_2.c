@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:35:43 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 21:07:43 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:21:41 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char		*ft_transform(t_list *dat, int i, int *no_way)
 	int		j;
 
 	res = (char *)malloc(ft_strlen(dat->data));
+	if (res == NULL)
+		ft_memerror();
 	j = 0;
 	while (((char *)(dat->data))[j] != '\0')
 	{

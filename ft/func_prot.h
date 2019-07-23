@@ -6,7 +6,7 @@
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/23 20:45:57 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:18:18 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ int		ft_strlen(char *str);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_realloc(char *array, int new_len);
 char	*ft_strdup(char *src);
+void	ft_memerror();
 #endif
