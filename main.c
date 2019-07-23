@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 20:35:02 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 21:24:20 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	read_file(int argc, char **argv)
 		if (fd != -1)
 		{
 			if (fd == -1 || !(buff = io_read(fd)) || !solve(buff))
-				ft_putstr("map error\n");
+				write(2, "map error\n", 10);
 			free(buff);
 		}
 		i++;
@@ -46,7 +46,7 @@ int		main(int argc, char **argv)
 	{
 		buff = io_read(0);
 		if (!(buff = io_read(0)) || !solve(buff))
-			ft_putstr("map error\n");
+			write(2, "map error\n", 10);
 		free(buff);
 	}
 	else
