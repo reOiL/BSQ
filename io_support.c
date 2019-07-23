@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:44 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 11:25:53 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 20:47:05 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int		count_new_line(char	*str)
+int		count_new_line(char *str)
 {
 	int	i;
 	int	n;
