@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 11:33:54 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 12:30:16 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int		solve(char *str)
 {
-	t_node	node;
 	t_list	*lst;
 
 	lst = ft_split(str);
-	if (!parse_info(&node, lst->data) || !verificate(lst->next, node))
+	if (!parse_info(&g_info, lst->data) || !verificate(lst->next, g_info))
 	{
 		ft_list_clear(&lst, 1);
 		return (0);
