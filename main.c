@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 11:17:27 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 11:32:02 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-
-int		solve(char *str)
-{
-	t_node	node;
-	t_list	*lst;
-
-	lst = ft_split(str);
-	if (!parse_info(&node, lst->data) || !verificate(lst->next, node))
-	{
-		ft_list_clear(&lst, 1);
-		return (0);
-	}
-	ft_list_clear(&lst, 1);
-	return (1);
-}
 
 int		main(int argc, char **argv)
 {

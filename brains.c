@@ -6,11 +6,26 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 11:13:07 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 11:33:54 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+
+int		solve(char *str)
+{
+	t_node	node;
+	t_list	*lst;
+
+	lst = ft_split(str);
+	if (!parse_info(&node, lst->data) || !verificate(lst->next, node))
+	{
+		ft_list_clear(&lst, 1);
+		return (0);
+	}
+	ft_list_clear(&lst, 1);
+	return (1);
+}
 
 int		parse_info(t_node *node, char *str)
 {
