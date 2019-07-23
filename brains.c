@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 09:15:58 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 11:13:07 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,42 @@ int		parse_info(t_node *node, char *str)
 	node->empty = str[--len];
 	str[len] = '\0';
 	node->field_size = ft_atoi(str);
+	return (1);
+}
+
+int		ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int		verificate(t_list *lst, t_node node)
+{
+	int		i;
+	int		j;
+	int		vmax;
+	char	*str;
+
+	if (lst == NULL)
+		return (0);
+	if (ft_list_size(lst) != node.field_size)
+		return (0);
+	i = -1;
+	vmax = -1;
+	while (++i < node.field_size)
+	{
+		str = ft_list_at(lst, i)->data;
+		j = -1;
+		while (str[j] != '\0')
+		{
+			if (str[j] != node.empty || str[j] != node.obst)
+				return (0);
+		}
+		vmax = ft_max(j, vmax);
+		if (vmax > j)
+			return (0);
+	}
 	return (1);
 }
 

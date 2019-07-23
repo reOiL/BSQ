@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:23:36 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 09:16:22 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/23 11:13:39 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 
 void	array_fill(char **a, t_node conf, t_quadro point);
 int		parse_info(t_node *node, char *str);
+int		verificate(t_list *lst, t_node node);
 
 #endif
