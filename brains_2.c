@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:35:43 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 11:19:43 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 14:33:37 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ t_quadro	parse(t_list *dat, int first)
 		ft_list_push_back(&next, ft_transform(dat, i++, &no_way));
 		dat = dat->next;
 	}
-
 	if (!no_way)
 	{
 		if (!first)
