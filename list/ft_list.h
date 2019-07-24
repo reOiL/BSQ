@@ -6,7 +6,7 @@
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 16:18:39 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/24 09:51:57 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 10:26:12 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	ft_list_clear(t_list **begin_list, int delete_item);
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr);
 t_list	*ft_split(char *str);
 t_list	*ft_list_copy(t_list *src);
+void	ft_list_delete_last(t_list **lst);
 #endif
