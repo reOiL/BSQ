@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:32:11 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 21:24:20 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 08:57:54 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ void	read_file(int argc, char **argv)
 	while (i < argc)
 	{
 		fd = open(argv[i], O_RDONLY);
-		if (fd != -1)
-		{
-			if (fd == -1 || !(buff = io_read(fd)) || !solve(buff))
-				write(2, "map error\n", 10);
+		buff = NULL;
+		if (fd == -1 || !(buff = io_read(fd)) || !solve(buff))
+			write(2, "map error\n", 10);
+		if (buff)
 			free(buff);
-		}
 		i++;
 	}
 }

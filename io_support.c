@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:44 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 21:20:28 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 08:58:45 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*io_read(int fd)
 	while ((res = read(fd, buffer, BUFF_SIZE)))
 	{
 		if (res == -1)
-			break ;
+			return (NULL);
 		buffer[res] = '\0';
 		result = ft_realloc(result, res);
 		new_line_count += count_new_line(buffer);
