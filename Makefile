@@ -6,7 +6,7 @@
 #    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/21 12:27:26 by jwebber           #+#    #+#              #
-#    Updated: 2019/07/23 16:00:57 by jwebber          ###   ########.fr        #
+#    Updated: 2019/07/24 08:06:24 by jwebber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,35 @@ SRC = main.c \
 	  list/ft_split.c \
 	  brains_2.c
 
-FLAGS = -Wall -Werror -Wextra -MD
+OBJ = 	main.o \
+	 	io_support.o \
+	 	brains.o \
+	 	ft/atoi.o \
+	 	ft/ft_realloc.o \
+	 	ft/put_char.o \
+	 	ft/put_str.o \
+	 	ft/str_len.o \
+	 	ft/strcpy.o \
+	 	ft/ft_strdup.o \
+	 	list/ft_create_elem.o \
+	 	list/ft_list_at.o \
+	 	list/ft_list_clear.o \
+	 	list/ft_list_push_back.o \
+	 	list/ft_list_push_front.o \
+	 	list/ft_list_size.o \
+	 	list/ft_split.o \
+	 	brains_2.o	  
+
+FLAGS = -Wall -Werror -Wextra
 RM = /bin/rm -f
 
-all:
-	@gcc $(FLAGS) $(SRC) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	gcc $^ -o $(NAME) $(FLAGS)
 
 clean:
-	@$(RM) *.o
+	@$(RM) $(OBJ)
 
 fclean: clean
 	@$(RM) $(NAME)
