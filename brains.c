@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 21:11:49 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 08:13:34 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,6 @@ int		parse_info(t_node *node, char *str)
 	str[len] = '\0';
 	node->field_size = ft_atoi(str);
 	return (1);
-}
-
-int		ft_max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
 }
 
 int		verificate(t_list *lst, t_node node)

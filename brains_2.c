@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:35:43 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/23 21:21:41 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 08:21:49 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,18 +102,14 @@ t_quadro	parse(t_list *dat, int first)
 	next = NULL;
 	while (dat->next)
 	{
-		ft_list_push_back(&next, ft_transform(dat, i, &no_way));
+		ft_list_push_back(&next, ft_transform(dat, i++, &no_way));
 		dat = dat->next;
-		i++;
 	}
 	if (!no_way)
 	{
 		if (!first)
 			ft_list_clear(&dat, 1);
-		res = parse(next, 0);
-		res.y.x += 1;
-		res.y.y += 1;
-		return (res);
+		return (ft_inc_qy(parse(next, 0)));
 	}
 	ft_list_clear(&next, 1);
 	res.x = ft_find_index(start);

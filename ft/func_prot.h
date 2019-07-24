@@ -6,7 +6,7 @@
 /*   By: jraelene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:29:04 by jraelene          #+#    #+#             */
-/*   Updated: 2019/07/23 21:18:18 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 08:12:14 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ char	*ft_strcpy(char *dest, char *src);
 char	*ft_realloc(char *array, int new_len);
 char	*ft_strdup(char *src);
 void	ft_memerror();
+int		ft_max(int a, int b);
 #endif
