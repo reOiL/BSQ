@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 09:59:54 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 11:29:12 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		parse_info(t_node *node, char *str)
 	node->empty = str[--len];
 	str[len] = '\0';
 	node->field_size = ft_atoi(str);
-	return (1);
+	return (node->field_size != 0);
 }
 
 int		verificate(t_list *lst, t_node node)
@@ -65,9 +65,7 @@ int		verificate(t_list *lst, t_node node)
 	int		vmax;
 	char	*str;
 
-	if (lst == NULL)
-		return (0);
-	if (ft_list_size(lst) != node.field_size)
+	if (lst == NULL || ft_list_size(lst) != node.field_size)
 		return (0);
 	i = -1;
 	vmax = -1;
@@ -81,7 +79,7 @@ int		verificate(t_list *lst, t_node node)
 				return (0);
 		}
 		vmax = ft_max(j, vmax);
-		if (vmax > j)
+		if (vmax > j || vmax == 0)
 			return (0);
 	}
 	return (1);
