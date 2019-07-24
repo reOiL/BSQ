@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 08:13:34 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 09:07:01 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int		verificate(t_list *lst, t_node node)
 	{
 		str = ft_list_at(lst, i)->data;
 		j = -1;
-		while (str[j] != '\0')
+		while (str[++j] != '\0')
 		{
-			if (str[j] != node.empty || str[j] != node.obst)
+			if (str[j] != node.empty && str[j] != node.obst)
 				return (0);
 		}
 		vmax = ft_max(j, vmax);

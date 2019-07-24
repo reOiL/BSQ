@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 12:41:44 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 08:58:45 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 09:06:28 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ char	*io_read(int fd)
 	}
 	if (fd > 0)
 		close(fd);
-	return (result);
+	return (taked == 0 ? NULL : result);
 }
