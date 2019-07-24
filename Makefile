@@ -6,7 +6,7 @@
 #    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/21 12:27:26 by jwebber           #+#    #+#              #
-#    Updated: 2019/07/24 08:06:24 by jwebber          ###   ########.fr        #
+#    Updated: 2019/07/24 08:08:13 by jwebber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ RM = /bin/rm -f
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc $^ -o $(NAME) $(FLAGS)
+	gcc $(SRC) -o $(NAME) $(FLAGS)
 
 clean:
 	@$(RM) $(OBJ)
