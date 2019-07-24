@@ -6,12 +6,12 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 11:29:12 by jwebber          ###   ########.fr       */
+/*   Updated: 2019/07/24 15:07:04 by jraelene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
 
 void	print_ele(t_list *lst)
 {
@@ -35,8 +35,13 @@ int		solve(char *str)
 		return (0);
 	}
 	points = parse(ft_list_copy(lst->next), 1);
-	array_fill(lst->next, points);
-	print_ele(lst->next);
+	if (points.x.x != -1 || points.x.y != -1)
+	{
+		array_fill(lst->next, points);
+		print_ele(lst->next);
+	}
+	else
+		write(2, "map error\n", 10);
 	ft_list_clear(&lst, 1);
 	return (1);
 }
