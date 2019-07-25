@@ -6,7 +6,7 @@
 /*   By: jwebber <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 15:27:59 by jwebber           #+#    #+#             */
-/*   Updated: 2019/07/24 15:07:04 by jraelene         ###   ########.fr       */
+/*   Updated: 2019/07/25 09:01:12 by jwebber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ int		solve(char *str)
 int		parse_info(t_node *node, char *str)
 {
 	int len;
+	int i;
 
+	i = 0;
 	len = ft_strlen(str);
 	if (len < 4)
 		return (0);
@@ -59,8 +61,10 @@ int		parse_info(t_node *node, char *str)
 	str[len] = '\0';
 	node->empty = str[--len];
 	str[len] = '\0';
+	if (!ft_str_is_numeric(str))
+		return (0);
 	node->field_size = ft_atoi(str);
-	return (node->field_size != 0);
+	return (node->field_size > 0);
 }
 
 int		verificate(t_list *lst, t_node node)

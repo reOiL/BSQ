@@ -6,7 +6,7 @@
 #    By: jwebber <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/21 12:27:26 by jwebber           #+#    #+#              #
-#    Updated: 2019/07/24 10:23:45 by jwebber          ###   ########.fr        #
+#    Updated: 2019/07/25 08:57:53 by jwebber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC = main.c \
 	  brains_2.c \
 	  support.c \
 	  list/ft_list_copy.c \
-	  list/ft_list_delete_last.c
+	  list/ft_list_delete_last.c \
+	  ft/ft_str_is_numeric.c
 
 OBJ = 	main.o \
 	 	io_support.o \
@@ -55,7 +56,8 @@ OBJ = 	main.o \
 	 	brains_2.o \
 		support.o \
 		list/ft_list_copy.o \
-		list/ft_list_delete_last.o
+		list/ft_list_delete_last.o \
+		ft/ft_str_is_numeric.o
 
 FLAGS = -Wall -Werror -Wextra
 RM = /bin/rm -f
